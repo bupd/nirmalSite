@@ -9,9 +9,10 @@ interface Props {
 	image?: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const baseSiteURL = new URL(Astro.site, 'https://example.com'); // Example fallback
+const canonicalURL = new URL(Astro.url.pathname, baseSiteURL);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/exodus_logo.png' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
